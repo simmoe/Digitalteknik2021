@@ -13,35 +13,24 @@ function setup() {
 function showChart(data){
     chart && chart.destroy()
     chart = new Chart(document.getElementById('myChart'), {
-        type: 'bar',
+        type: 'polarArea',
         data: {
             labels: Object.keys(data),
             datasets: [{
-                label: 'no-label',
                 data: Object.values(data),
-                backgroundColor: ['rgba(255, 99, 132, 0.2)','rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)'],
-                borderWidth: 3,
-                
-            }],
-        },
-        options:{
-            plugins:{
-                legend:{
-                    display:false
-                },
-                title:{
-                    display:true,
-                    text:'chart title'
-                }
-            }
-        }
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(255, 206, 86, 0.9)',
+                    ],
+                }]
+            },
+        });
+    }
 
-    });
-}
-
-function addData(collection, id, data){
+function addData(collection, doc, data){
     // Add a new document in collection "cities"
-    db.collection(collection).doc(id).set(data)
+    db.collection(collection).doc(doc).set(data)
     .then(() => {
         console.log("Document successfully written!")
     })
