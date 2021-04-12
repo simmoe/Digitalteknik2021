@@ -10,12 +10,38 @@ function setup() {
   //når vi modtager beskeder fra MQTT serveren kaldes denne funktion
   client.on('message', (topic, message) => {
     console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
-  })
-  
+  })  
 }
 
-function draw() {
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,3 +96,19 @@ const mqttInit = () => {
     console.log(clientId + ' disconnected')
   })
 } 
+
+function showChart(){
+  //opret chart 
+  chart = new Chart(select('#chartCanvas').elt, {
+      type: 'bar',
+      data: {
+        labels: ['hej', 'med', 'dig'],
+        datasets: [{
+            label: 'Resultat',
+            data: [33,10,23],
+              backgroundColor: ['lightred', 'lightgreen', 'lightblue'],
+              borderWidth: 3
+          }]
+      },
+  });
+}
