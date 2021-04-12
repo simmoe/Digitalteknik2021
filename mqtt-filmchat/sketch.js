@@ -1,9 +1,7 @@
 //client er den variabel der bruges til at oprette forbindelse til mqtt serveren
 let client 
 //vi skal bruge en variabel til at gemme brugerens navn
-let myName = 'sus'
-//Vi skal bruge nogle HTML elementer til at vise chatten
-let chatContainer, input, submit, messages
+let myName = ''
 
 //setup er den funktion der kører, før selve web-appen starter 
 function setup() {
@@ -14,27 +12,18 @@ function setup() {
   //først vil vi gerne vide hvad brugeren hedder (eller vil kalde sig)
   myName = window.prompt('what´s your name?')
   //vi laver chatten i en lille funktion
-  createChat()
   client.on('message', (topic, message)=>{
+    let messages = select('#messages')
     messages.html( messages.html() + '<br/>' + message)
     messages.elt.scrollTop = messages.elt.scrollHeight
   })
+  select('#submit').mouseReleased(()=>{
+    let message = select('#message')
+    client.publish('filmfestival', myName + ' siger: ' + message.value())
+    message.value('')
+  })
 }
 
-function createChat(){
-    //så opretter vi chatvinduet 
-    chatContainer = createDiv('').class('chat')
-    input = createInput().attribute('placeholder', 'skriv noget og send det til de andre...')
-    submit = createButton('send')
-    messages = createDiv()
-    chatContainer.child(input)
-    chatContainer.child(submit)
-    chatContainer.child(messages)
-    submit.mouseReleased(()=>{
-      client.publish('filmfestival', myName + ' siger: ' + input.value())
-      input.value('')
-    })
-}
 
 
 

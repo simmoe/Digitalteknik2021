@@ -3,8 +3,7 @@
     scroll-behavior: smooth;
 }
 canvas{
-    position:absolute;
-    z-index:-3;
+    display:none;
 }
 body{
     margin:0;
@@ -20,7 +19,7 @@ iframe{
     position:absolute;
 }
 
-.chat{
+#chat{
     position:absolute;
     bottom:0;
     width:100vw;
@@ -32,7 +31,7 @@ iframe{
     gap:1rem;
     padding:2rem;
 }
-.chat div{
+#chat div{
     background:white;
     overflow:scroll;
     border-radius:.5rem;
