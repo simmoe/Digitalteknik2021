@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+canvas{
+    position:absolute;
+    z-index:-3;
+}
+body{
+    margin:0;
+    max-height:100vh;
+    max-width:100vw;
+    display:grid;
+    grid-template-rows: 1fr 1fr 6fr 4fr;
+    padding: 2rem;
+    overflow:hidden;
+}
+
+.timer{
+    text-align:center;
+    align-self: center;
+    font-size:10rem;
+}
+
+.winner{
+    position:absolute;
+    top:100vh;
+    left:0;
+    width:100vw;
+    height:60vh;
+    background:lightblue;
+    display:grid;
+    place-items: center;
+    transition:all .8s ease-in-out;
+}
+
+.in{
+    top:40vh;
+}
+
+
+
+
+
+
+main{
+    display:none;
+}

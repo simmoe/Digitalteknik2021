@@ -1,0 +1,53 @@
+*{
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+}
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    width:100vw;
+    overflow:hidden;
+}
+
+iframe{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+}
+
+#vote{
+    position:absolute;
+    width:100vw;
+    height:20vh;
+    background:white;
+    display:grid;
+    grid-auto-flow: row;
+}
+
+#options div, #timer{
+    display:grid;
+    place-items: center;
+}
+
+#chart{
+    position:absolute;
+    background:white;
+    z-index:3;
+    top:-100vh;
+    left:0;
+    width:100vw;
+    height:100vh;
+    transition: all 1s ease-in-out;
+}
+#chart.show{
+    top:0;
+}
+
+#timer{
+    font-size:10vh;
+}
+#options{
+    display:grid;
+    grid-auto-flow: column;
+}

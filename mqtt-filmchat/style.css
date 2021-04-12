@@ -1,0 +1,40 @@
+*{
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+}
+canvas{
+    position:absolute;
+    z-index:-3;
+}
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    width:100vw;
+    overflow:hidden;
+}
+
+iframe{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+}
+
+.chat{
+    position:absolute;
+    bottom:0;
+    width:100vw;
+    height:20vh;
+    background:rgba(20,20,20,.9);
+    display:grid;
+    grid-template-columns:6fr 2fr;
+    grid-template-rows:1fr 8fr;
+    gap:1rem;
+    padding:2rem;
+}
+.chat div{
+    background:white;
+    overflow:scroll;
+    border-radius:.5rem;
+    padding:.5rem;
+}
