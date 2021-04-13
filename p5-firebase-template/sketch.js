@@ -1,3 +1,4 @@
+//vi skal bruge en variiabel til at danne en opi af data fra firebase, og en til at referere det chart vi opretter
 let data, chart
 
 function setup() {
@@ -11,13 +12,19 @@ function setup() {
 }
 
 function showChart(data){
+    //der dannes et nyt chart hver gang der kommer nye data i firebaser, derfor skal det gamle slettes først
     chart && chart.destroy()
+    //charts dannes i et <canvas> element med id='myChart' - se index.html 
     chart = new Chart(document.getElementById('myChart'), {
+        // bar | doughnut | line m.fl - se flere på https://www.chartjs.org/docs/latest/charts/line.html
         type: 'polarArea',
         data: {
+            //Labes hentes fra firebase KEYS
             labels: Object.keys(data),
             datasets: [{
+                //data hentes fra firebase VALUES
                 data: Object.values(data),
+                //der skal være ligeså mange farver som der er KEYS/VALUES
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.9)',
                     'rgba(54, 162, 235, 0.9)',
