@@ -1,4 +1,4 @@
-//vi skal bruge en variiabel til at danne en opi af data fra firebase, og en til at referere det chart vi opretter
+//vi skal bruge en variabel til at holde en kopi af data fra firebase, og en til at referere det chart vi opretter
 let data, chart
 
 function setup() {
@@ -9,6 +9,9 @@ function setup() {
 //         showChart(doc.data())
 //     })
 
+//      UNCOMMENT THIS TO TRACK ANALYTICS PARAMETERS
+//      analytics.logEvent('trigger_name', { label_name: 'a user just fired the trigger_name dimension'});
+ 
 }
 
 function showChart(data){
