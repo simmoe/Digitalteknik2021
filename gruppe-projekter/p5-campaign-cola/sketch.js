@@ -28,15 +28,26 @@ function setup() {
 }
 
 function showAnswer(question, index){
+    let answerdiv = select('#answer').html('')
     if(question.correct == index){
-        console.log('correct')
+        answerdiv.child(createDiv(question.righttext))
     }else{
-        console.log('wroong')
+        answerdiv.child(createDiv(question.wrongtext))
     }
+    answerdiv.child(createButton('næste')).mousePressed(()=>{
+        answerdiv.removeClass('show')
+        goRight()
+    })
+    answerdiv.addClass('show');
 }
 function goRight(){
-    if(position < pages.length-1) position++
-    selectAll('.page').map( e => e.style('transform', 'translateY(' + position * -100 + 'vh)') )
+    //hvis der er mere quiz 
+    if(position < pages.length-1){
+        position++
+        selectAll('.page').map( e => e.style('transform', 'translateY(' + position * -100 + 'vh)') )
+    }else{
+        select('#end').addClass('show')
+    }
 }
 function goLeft(){
     if(position >= 1) position--

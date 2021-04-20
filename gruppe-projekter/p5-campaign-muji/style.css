@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: Raleway;
+    margin:0;
+    padding:0;
+}
+
+body{
+    height:100vh;
+    width:100vw;
+    display:grid;
+    grid-auto-flow:column;
+    overflow:hidden;
+}
+h1{
+    font-size:8rem;
+}
+p{
+    font-size:2rem;
+}
+.page{
+    display:grid;
+    width:100vw;
+    height:100vh;
+    grid-template-rows: 2fr 2fr 6fr 2fr;
+    transition:1s all ease-in-out;
+}
+
+.header, .main, .title, .footer, .helper{
+    min-height:100%;
+    min-width:100%;
+}
+
+.header{
+    display:grid;
+    align-items:center;
+}
+.header img{
+    height:40%;
+}
+
+#frontpage .header{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: start;
+    border-bottom:1px solid black;
+}
+
+#frontpage .main{
+    background:darkgray;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+}
+.text{
+    display:grid;
+    align-items:center;
+}
+.text p{
+    padding:0;
+    margin:0;
+}
+
+#start{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.helper{
+    display:grid;
+    place-items:center;
+}
+.helper img{
+    height: 40vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#defaultCanvas0{
+    position:absolute;
+}
