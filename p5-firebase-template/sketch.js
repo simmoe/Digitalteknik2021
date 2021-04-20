@@ -5,12 +5,8 @@ function setup() {
 
 //helper functions to move div's with class page 
 function goRight(){
-    if(position < pages.length - 1) position--
+    position++
     selectAll('.page').map( e => e.style('transform', 'translateX(' + position * -100 + 'vw)') )
-}
-function goLeft(){
-    if(position <= 0) position--
-    selectAll('.page').map( e => e.style('transform', 'translateX(' + position * 100 + 'vw)') )
 }
 
 function getData(collection, doc){
