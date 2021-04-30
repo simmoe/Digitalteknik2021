@@ -1,20 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family: 'Open Sans';
+    font-weight:300;
+    color:white;
 }
-canvas{
-    position:absolute;
-    z-index:-3;
-}
+
 body{
-    margin:0;
-    max-height:100vh;
-    max-width:100vw;
-    display:grid;
-    grid-template-rows: 1fr 1fr 6fr 4fr;
-    padding: 2rem;
+    height:100vh;
+    width:100vw;
     overflow:hidden;
+    background-image: linear-gradient(#2F5D58, rgba(255,255,255,0));
+}
+main{
+    display:grid;
+    grid-auto-flow: column;
+    transition:all .4s ease-in-out;
+}
+.page{
+    width:100vw;
+    height:100vh;
+    padding: 20%;
+    display:grid;
+    grid-template-rows: 2fr 6fr 1fr;
+    align-items: start;
+}
+
+h1{
+    font-size:4rem;
+    text-align: center;
+}
+
+button{
+    background-color: #F2B752;
+    border:none;
+    border-radius:27px;
+    display:grid;
+    place-items:center;
+    font-size: 1rem;
+    padding:1rem;
+    color:black;
+    font-weight:bold;
+    border-radius:1rem;
+}
+
+button#resetButton{
+    background-color: black;
+    color: #F2B752;
+}
+
+.page.splash{
+    background-image:linear-gradient(#2F5D58, rgba(255,255,255,0)), 
+    url('./assets/background.jpg');
+    background-position:center 8%;
 }
 
 .timer{
@@ -23,27 +64,22 @@ body{
     font-size:10rem;
 }
 
-.winner{
+#highscore h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom:3px solid gray;
+    line-height:3rem;
+    margin-bottom:1rem;
+    display: inline-block;
+}
+#highscore div{
+    font-weight: normal;
+}
+.me{
+    color:#F2B752;
+}
+
+canvas{
     position:absolute;
-    top:100vh;
-    left:0;
-    width:100vw;
-    height:60vh;
-    background:lightblue;
-    display:grid;
-    place-items: center;
-    transition:all .8s ease-in-out;
-}
-
-.in{
-    top:40vh;
-}
-
-
-
-
-
-
-main{
-    display:none;
+    z-index:-3;
 }

@@ -8,10 +8,33 @@
   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.0/p5.min.js" integrity="sha512-tGZFF1kxT/c9C+kv77mKkZ9Ww1VyU8TMX6HLUSzbPrDLuptbiRFBfti8A33ip+BBIHYUsybuZD9OKLmIqdLmaQ==" crossorigin="anonymous"></script>
   <script src="sketch.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main>
+    <div class="page splash">
+      <h1>Runforit</h1>
+      <p>Place the running stick and create a start line. Get the runner ready - and push go ahead</p>
+      <button id='readyButton'>Go ahead</button>
+    </div>
+    <div class="page ready">
+      <h1>Ready?</h1>
+      <p>Get ready at the start line. Hit Start Run to begin race</p>
+      <button id='startButton'>Start Run</button>
+    </div>
+    <div class="page run">
+      <h1 id="timer">0:00</h1>
+      <p></p>
+      <button id='cancelButton'>Cancel</button>    
+    </div>
+    <div class="page results">
+      <h1 id='endTime'>10:00</h1>
+      <div id='highscore'>
+        <h3>High Score</h3>
+      </div>
+      <button id="resetButton">Restart</button>
+    </div>  
+  </main>
 </body>
 </html>
 
