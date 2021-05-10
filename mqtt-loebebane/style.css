@@ -53,9 +53,10 @@ button#resetButton{
 }
 
 .page.splash{
-    background-image:linear-gradient(#2F5D58, rgba(255,255,255,0)), 
+    background-image:linear-gradient(#2F5D58, rgba(255,255,255,0)),
     url('./assets/background.jpg');
     background-position:center 8%;
+    background-repeat: no-repeat;
 }
 
 .timer{
@@ -82,4 +83,13 @@ button#resetButton{
 canvas{
     position:absolute;
     z-index:-3;
+}
+
+@media only screen and (min-width:800px) {
+    .page{
+        padding:0 30vw 0 30vw;
+    }
+    .page p, .page button{
+        margin:20%;
+    }
 }

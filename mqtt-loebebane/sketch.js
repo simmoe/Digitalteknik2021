@@ -70,7 +70,7 @@ function endGame(){
   clearInterval(timer)
   select('#endTime').html(runner.time)
   highscore.push(float(runner.time))
-  highscore.sort()
+  highscore.sort(function(a,b){return a - b})
   console.log(highscore)
 
   select('#highscore').html('<h3>Highscore</h3>')
