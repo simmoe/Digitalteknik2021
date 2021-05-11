@@ -1,0 +1,21 @@
+{
+  "name": "mqtt-now-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vercel": "^22.0.1"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.1.3",
+    "mqtt": "^4.2.6"
+  }
+}
